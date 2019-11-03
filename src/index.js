@@ -7,7 +7,7 @@ import SmoothScrollingArticle, { Item } from "smooth-scroll";
 //maps a number x from values [a,b] to range [c,d]
 const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
 
-const images = document.querySelectorAll(".content__item-img");
+const images = document.querySelectorAll(".scroll-image");
 const items = [];
 
 images.forEach(element => {
@@ -27,8 +27,8 @@ images.forEach(element => {
   items.push(item);
 });
 
-const titles = document.querySelectorAll(".content__item-title");
-
+const titles = document.querySelectorAll(".scroll-title");
+console.log(titles);
 titles.forEach(element => {
   const item = new Item({ element });
   item.add({
@@ -42,6 +42,6 @@ titles.forEach(element => {
 });
 new SmoothScrollingArticle({
   article: document.querySelector("main"),
-  scrollable: document.querySelector("div[data-scroll]"),
+  scrollable: document.querySelector(".scrolling-area"),
   items
 });
