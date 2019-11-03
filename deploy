@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Get todays date
+NOW=$(date +"%d-%m-%Y")
+echo $NOW
+
+npx webpack --config webpack.prod.js
+
+cd dist
+git init
+echo Please enter a remote repository
+read REMOTE
+git remote add origin $REMOTE
+git checkout -b gh-pages
+
+
+git add . && git commit -m "Released at $NOW" && git push --force origin head
+exit 0
