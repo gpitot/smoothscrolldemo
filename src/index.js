@@ -2,7 +2,7 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 import "./sass/index.scss";
 
-import SmoothScrollingArticle, { Item } from "smooth-scroll";
+import SmoothScrollingArticle, { Item } from "future-scroll";
 
 //maps a number x from values [a,b] to range [c,d]
 const map = (x, a, b, c, d) => ((x - a) * (d - c)) / (b - a) + c;
